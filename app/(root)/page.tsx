@@ -5,7 +5,7 @@ export const metadata = {
   description: "Home page of the Prostore",
 }
 
-const Home = () => {
+const Home = async () => {
   return ( 
     <div>
       <Button>Click me</Button>
