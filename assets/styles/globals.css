@@ -3,6 +3,14 @@
 @tailwind utilities;
 
 @layer utilities {
+  .text-foreground {    
+    color: theme("colors.foreground");  
+  }  
+
+  .bg-background {    
+     background-color: theme("colors.background");  
+  }
+  
   .wrapper {
     @apply max-w-7xl lg:mx-auto p-5 md:px-10 w-full;
   }
