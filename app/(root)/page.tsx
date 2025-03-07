@@ -1,5 +1,10 @@
 import { Button } from "@/components/ui/button";
 
+export const metadata = {
+  title: "Home",
+  description: "Home page of the Prostore",
+}
+
 const Home = () => {
   return ( 
     <div>
