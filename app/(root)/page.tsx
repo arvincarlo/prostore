@@ -9,7 +9,7 @@ export const metadata = {
 const Home = async () => {
   return ( 
     <>
-      <ProductList data={sampleData?.products} title="Newest Arrivals" limit={3}></ProductList>
+      <ProductList data={sampleData?.products} title="Newest Arrivals" limit={4}></ProductList>
     </>
   );
 }
