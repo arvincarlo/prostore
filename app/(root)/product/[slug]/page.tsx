@@ -4,6 +4,7 @@ import { Badge } from '@/components/ui/badge';
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import ProductPrice from "@/components/shared/product/product-price";
+import ProductImages from "@/components/shared/product/product-images";
 
 const ProductDetailsPage = async (props: {
     params: Promise<{slug: string}>
@@ -20,6 +21,7 @@ const ProductDetailsPage = async (props: {
                     {/* Image Column */}
                     <div className="col-span-2">
                         {/* Images Component */}
+                        <ProductImages images={product.images}/>
                     </div>
                     {/* Details Column */}
                     <div className="col-span-2 p-5">
