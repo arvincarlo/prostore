@@ -54,12 +54,12 @@ export async function signUpUser(prevState: unknown, formData: FormData) {
 
         await signIn('credentials', {
             email: user.email,
-            psasword: plainPassword
+            password: plainPassword
         });
 
         return { success: true, message: 'User registered successfully' };
     } catch (error) {
-        if (!isRedirectError(error)) {
+        if (isRedirectError(error)) {
             throw error;
         }
 
