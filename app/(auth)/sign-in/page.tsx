@@ -10,10 +10,18 @@ export const metadata: Metadata = {
     title: 'Sign In'
 }
 
-const SignInPage = async() => {
+const SignInPage = async(props: {
+    searchParams: Promise<{
+        callbackUrl: string;
+    }>
+}) => {
+    const { callbackUrl } = await props.searchParams;
+
     const session = await auth();
 
-    if (session) redirect('/')
+    if (session) {
+        redirect(callbackUrl || '/')
+    }
 
     return <div className="w-full max-w-md mx-auto">
         <Card>
