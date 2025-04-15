@@ -55,7 +55,7 @@ const AddToCart = ({ cart, item }: { item: CartItem, cart?: Cart; }) => {
 
     return existItem ? (
         <div>
-            <Button type="button" variant="outline" onClick={handleRemoveFromCart}>
+            <Button type="button" variant="outline" onClick={handleRemoveFromCart} disabled={isPending}>
                 { isPending ? (
                     <Loader className="w-4 h-4 animate-spin"/>
                 ) : (
@@ -63,7 +63,7 @@ const AddToCart = ({ cart, item }: { item: CartItem, cart?: Cart; }) => {
                 ) }
             </Button>
             <span className="px-2">{ existItem.qty }</span>
-            <Button type="button" variant="outline" onClick={handleAddToCart}>
+            <Button type="button" variant="outline" onClick={handleAddToCart} disabled={isPending}>
                 { isPending ? (
                     <Loader className="w-4 h-4 animate-spin"/>
                 ) : (
@@ -72,7 +72,7 @@ const AddToCart = ({ cart, item }: { item: CartItem, cart?: Cart; }) => {
             </Button>
         </div>
     ) : (
-        <Button className="w-full" type="button" onClick={handleAddToCart}>
+        <Button className="w-full" type="button" onClick={handleAddToCart} disabled={isPending}>
             { isPending ? (
                 <Loader className="w-4 h-4 animate-spin"/>
             ) : (
